@@ -1,0 +1,283 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10049,        273]
+NotebookOptionsPosition[      7724,        223]
+NotebookOutlinePosition[      8122,        239]
+CellTagsIndexPosition[      8079,        236]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+  "text", " ", "=", " ", 
+   "\"\<I love dogs. My dog Meera is adorable. She is a hyperactive doberman. \
+I take her for a long walk every morning.\>\""}], ";"}]], "Input",
+ CellChangeTimes->{{3.86996354530079*^9, 3.869963559960191*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"354bfbb0-7228-425d-9403-069c424fbd79"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sents", "=", 
+  RowBox[{"TextCases", "[", 
+   RowBox[{"text", ",", "\"\<Sentence\>\""}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.869963566386938*^9, 3.869963571790432*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"d9b979c9-0580-4b37-9426-28660f684bf8"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"I love dogs.\"\>", ",", "\<\"My dog Meera is adorable.\"\>", 
+   ",", "\<\"She is a hyperactive doberman.\"\>", 
+   ",", "\<\"I take her for a long walk every morning.\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.86996357775646*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"e81554bb-164c-4e22-a441-8b59e44343ab"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"when", " ", "=", " ", 
+  RowBox[{"TextCases", "[", 
+   RowBox[{"text", ",", 
+    RowBox[{"{", 
+     RowBox[{"\"\<Adjective\>\"", ",", "\"\<ProperNoun\>\""}], "}"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.869963581204308*^9, 3.8699635901880283`*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"792d0066-0d8f-49f2-bf95-b72e5e59d022"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"Adjective\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\<\"adorable\"\>", ",", "\<\"hyperactive\"\>", 
+      ",", "\<\"long\"\>"}], "}"}]}], ",", 
+   RowBox[{"\<\"ProperNoun\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"Meera\"\>", "}"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.869963600038528*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"d3ae3c9a-688f-4092-9ce9-eb7344c72ec0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"np", " ", "=", " ", 
+  RowBox[{"TextCases", "[", 
+   RowBox[{"text", ",", "\"\<NounPhrase\>\""}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8699636278196373`*^9, 3.869963632120438*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"c629abc8-efaa-4773-833f-1db2508595fa"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"I\"\>", ",", "\<\"dogs\"\>", ",", "\<\"My dog Meera\"\>", 
+   ",", "\<\"She\"\>", ",", "\<\"a hyperactive doberman\"\>", 
+   ",", "\<\"I\"\>", ",", "\<\"her\"\>", ",", "\<\"a long walk\"\>", 
+   ",", "\<\"a long walk every morning\"\>", ",", "\<\"every morning\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.869963634693061*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"eacafdfd-0c9e-4a26-a610-910218503f0c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TextCases", "[", 
+  RowBox[{
+  "\"\<Worldwide, 27 million people have been infected by corona virus, but \
+fortunately 18 million have recovered.\>\"", ",", 
+   "\"\<QuantifierPhrase\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.869963642657671*^9, 3.869963660455029*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"2fada3b2-d2f4-4f0c-aee3-d69b505486cc"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"27 million\"\>", ",", "\<\"18 million\"\>"}], "}"}]], "Output",\
+
+ CellChangeTimes->{3.8699636615510063`*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"f4fde91e-b005-4b4d-a0ea-09b7269770c9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TextCases", "[", 
+  RowBox[{
+  "\"\<Do you know how fortunate I am to get this award?\>\"", ",", 
+   "\"\<WhAdjectivePhrase\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.869963670573701*^9, 3.869963681255246*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"a67f1fd8-ef5c-4da0-b8d5-0b873835e4cb"],
+
+Cell[BoxData[
+ RowBox[{"{", "\<\"how fortunate\"\>", "}"}]], "Output",
+ CellChangeTimes->{3.869963682413967*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"0ba865c6-8ee8-480e-80cf-826294eb650c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dogs", " ", "=", " ", 
+  RowBox[{"TextCases", "[", 
+   RowBox[{"text", ",", 
+    RowBox[{"Containing", "[", 
+     RowBox[{"\"\<Sentence\>\"", ",", "\"\<DogBreed\>\""}], "]"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.869963688596159*^9, 3.8699636966021757`*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"556728bf-4746-4cfb-a7dd-0b15540e166c"],
+
+Cell[BoxData[
+ RowBox[{"{", "\<\"She is a hyperactive doberman.\"\>", "}"}]], "Output",
+ CellChangeTimes->{3.869963746097184*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"e1b5a2fb-5b82-46d1-973d-652dda803727"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"positive", " ", "=", " ", 
+  RowBox[{"TextCases", "[", 
+   RowBox[{"text", ",", " ", "\"\<PositiveSentiment\>\""}], "]"}]}]], "Input",\
+
+ CellChangeTimes->{{3.869963762249957*^9, 3.869963769139711*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"9dafce49-8334-4338-be75-111a6c647b1b"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"I love dogs. My dog Meera is adorable.\"\>", 
+   ",", "\<\"I take her for a long walk every morning.\"\>"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.869963772164341*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"8e4e0e49-d821-4883-bb4a-b5aa62def61a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TextCases", "[", 
+  RowBox[{
+  "\"\<You can email me at ranga@mmsindia.com or at me@rangakrish.com. To \
+learn more about KPAstro software, please visit www.kpastrosoftware.com\>\"", 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\"\<EmailAddress\>\"", ",", "\"\<URL\>\""}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.869963800848291*^9, 3.8699638299364367`*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"079bf6e2-a639-47ae-b66d-a95323250346"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"EmailAddress\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\<\"ranga@mmsindia.com\"\>", ",", "\<\"me@rangakrish.com\"\>"}],
+      "}"}]}], ",", 
+   RowBox[{"\<\"URL\"\>", "\[Rule]", 
+    RowBox[{"{", "\<\"www.kpastrosoftware.com\"\>", "}"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.869963831014608*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"f629136e-54ef-4858-8330-3b587aa527c0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TextCases", "[", 
+  RowBox[{
+  "\"\<Mahatma Gandhi fought for India's independence. Narendra Modi is the \
+Prime Minister of India and Trump is the President of United States.\>\"", 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"\"\<Country\>\"", ",", "\"\<Person\>\""}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8699638778337927`*^9, 3.8699639015272923`*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"36d83c86-c6d8-4b62-9007-613abc48c712"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"Country\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\<\"India\"\>", ",", "\<\"India\"\>", 
+      ",", "\<\"United States\"\>"}], "}"}]}], ",", 
+   RowBox[{"\<\"Person\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\<\"Mahatma Gandhi\"\>", ",", "\<\"Narendra Modi\"\>", 
+      ",", "\<\"Trump\"\>"}], "}"}]}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.86996390267635*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"1c188196-3353-4fea-b7e3-23d7089ed009"]
+}, Open  ]]
+},
+WindowSize->{809, 279},
+WindowMargins->{{Automatic, 261}, {180, Automatic}},
+FrontEndVersion->"13.0 for Mac OS X x86 (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"6e38bf18-42a6-4cdf-9a6b-de46db7a9ddf"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 350, 7, 73, "Input",ExpressionUUID->"354bfbb0-7228-425d-9403-069c424fbd79"],
+Cell[CellGroupData[{
+Cell[933, 31, 275, 5, 30, "Input",ExpressionUUID->"d9b979c9-0580-4b37-9426-28660f684bf8"],
+Cell[1211, 38, 359, 7, 56, "Output",ExpressionUUID->"e81554bb-164c-4e22-a441-8b59e44343ab"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1607, 50, 359, 8, 30, "Input",ExpressionUUID->"792d0066-0d8f-49f2-bf95-b72e5e59d022"],
+Cell[1969, 60, 473, 11, 37, "Output",ExpressionUUID->"d3ae3c9a-688f-4092-9ce9-eb7344c72ec0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2479, 76, 286, 5, 30, "Input",ExpressionUUID->"c629abc8-efaa-4773-833f-1db2508595fa"],
+Cell[2768, 83, 453, 8, 56, "Output",ExpressionUUID->"eacafdfd-0c9e-4a26-a610-910218503f0c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3258, 96, 375, 7, 73, "Input",ExpressionUUID->"2fada3b2-d2f4-4f0c-aee3-d69b505486cc"],
+Cell[3636, 105, 231, 5, 34, "Output",ExpressionUUID->"f4fde91e-b005-4b4d-a0ea-09b7269770c9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3904, 115, 316, 6, 30, "Input",ExpressionUUID->"a67f1fd8-ef5c-4da0-b8d5-0b873835e4cb"],
+Cell[4223, 123, 190, 3, 34, "Output",ExpressionUUID->"0ba865c6-8ee8-480e-80cf-826294eb650c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4450, 131, 370, 8, 30, "Input",ExpressionUUID->"556728bf-4746-4cfb-a7dd-0b15540e166c"],
+Cell[4823, 141, 207, 3, 34, "Output",ExpressionUUID->"e1b5a2fb-5b82-46d1-973d-652dda803727"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5067, 149, 304, 6, 30, "Input",ExpressionUUID->"9dafce49-8334-4338-be75-111a6c647b1b"],
+Cell[5374, 157, 293, 6, 34, "Output",ExpressionUUID->"8e4e0e49-d821-4883-bb4a-b5aa62def61a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5704, 168, 466, 10, 94, "Input",ExpressionUUID->"079bf6e2-a639-47ae-b66d-a95323250346"],
+Cell[6173, 180, 481, 11, 37, "Output",ExpressionUUID->"f629136e-54ef-4858-8330-3b587aa527c0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6691, 196, 466, 10, 94, "Input",ExpressionUUID->"36d83c86-c6d8-4b62-9007-613abc48c712"],
+Cell[7160, 208, 548, 12, 60, "Output",ExpressionUUID->"1c188196-3353-4fea-b7e3-23d7089ed009"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
